@@ -12,6 +12,15 @@ const useFetchData = (url) => {
     },
     [url]
   );
+  //   useEffect(
+  //     function () {
+  //       fetch(url) //returns a promise
+  //         .then((response) => response.json())
+  //         .then((data) => setData(data));
+  //     },
+  //     [url]
+
+  //   );
 
   return [data];
 };
