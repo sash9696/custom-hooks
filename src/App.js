@@ -8,6 +8,9 @@ function App() {
   const [photosData] = useFetchData(
     "https://jsonplaceholder.typicode.com/photos"
   );
+  // const [photosData] = useFetchData(
+  //   "https://jsonplaceholder.typicode.com/photos"
+  // );
 
   return (
     <div className="app">
