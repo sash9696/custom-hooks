@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import useFetchData from "./components/customHooks/useFetchData";
 
 function App() {
+  const [usersData] = useFetchData(
+    "https://jsonplaceholder.typicode.com/users"
+  );
+  const [photosData] = useFetchData(
+    "https://jsonplaceholder.typicode.com/photos"
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <h1>Custom Hook</h1>
+
+      {usersData ? <h4>{usersData[0]?.name}</h4> : null}
+      {photosData ? <img height={200} src={photosData[0]?.url} /> : null}
     </div>
   );
 }
